@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # bin/detect <build-dir>
 
-# Nothing is required
-
-echo "Static"
+test -f $1/index.html && echo Static
