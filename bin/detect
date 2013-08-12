@@ -1,4 +1,4 @@
 #!/bin/sh
 # bin/detect <build-dir>
 
-test -f $1/index.html && echo Static
+test -f $1/.htaccess && echo Apache static
