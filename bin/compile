@@ -16,20 +16,7 @@ LP_DIR=`cd $(dirname $0); cd ..; pwd`
 # include .files when moving things around
 shopt -s dotglob
 
-cd $BUILD_DIR/www
-
-# move app things to www
-mkdir -p $CACHE_DIR/www
-mv * $CACHE_DIR/www
-mv $CACHE_DIR/www .
-
-# unpack cache
-for DIR in $APACHE_PATH ; do
-  rm -rf $DIR
-  if [ -d $CACHE_DIR/$DIR ]; then
-    cp -r $CACHE_DIR/$DIR $DIR
-  fi
-done
+cd $BUILD_DIR
 
 # install apache if needed
 if [ ! -d $APACHE_PATH ]; then
