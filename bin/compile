@@ -19,14 +19,9 @@ shopt -s dotglob
 cd $BUILD_DIR
 
 # move app things to www
-mkdir -p $CACHE_DIR/www
-mv * $CACHE_DIR/www
-mv $CACHE_DIR/www .
-
-# keep Procfile
-if [ -f www/Procfile ]; then
-  mv www/Procfile .
-fi
+mkdir -p $CACHE_DIR
+mv * $CACHE_DIR
+mv $CACHE_DIR .
 
 # unpack cache
 for DIR in $APACHE_PATH ; do
